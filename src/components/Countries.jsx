@@ -31,9 +31,9 @@ const Countries = (props) => {
         <div className="card">
           <img className="the-flag" src={c.flag} alt="flag" />
           <h3>{c.name}</h3>
-          <span>{c.population}</span>
-          <span>{c.capital}</span>
-          <span>{c.region}</span>
+          <span>Population : {c.population}</span>
+          <span>Capital :{c.capital}</span>
+          <span>Region :{c.region}</span>
         </div>
       ))}
     </div>
