@@ -1,81 +1,133 @@
-*{
-    margin: 0;
+* {
+  margin: 0;
 }
-.App{
-    width: 100%;
-    height: 100%;
-    background-color: #EEE;
+.App {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  color: black;
 }
-.header{
-    height: 10vh;
-    display: flex;
-    justify-content: space-around;
-    background-color: #FFF;
-    border-bottom: 1px solid black;
+.darkMode {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
 }
-.header > .title{
-    width: 48%;
-    height: 100%;
-    display: flex;
-    align-items: center;
+.header {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-bottom: 1px solid black;
 }
-.btn-container{
-    height: 100%;
-    width: 48%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.darkModeHeader {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+  border-bottom: 1px solid white;
 }
-.btn{
-    height: 50%;
-    display: flex;
-    align-items: center;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+.darkModeHeader > .title {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
-.form{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    height: 20%;
+.darkModeHeader > .btn-container > .btn {
+  color: white;
 }
-.form-left{
-    position: relative;
+.darkModeHeader > .btn-container > .btn > .dark {
+  filter: invert(1);
 }
-.form > div{
-    width: calc(90%/2);
+.header > .title {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
-.container{
-    width: 100%;
-    margin-top: 10px;
-    height: 50vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.btn-container {
+  height: 100%;
+  width: 48%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
-input{
-    margin-top: 10px;
-    height: 40px;
-    width: 300px;
+.btn {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
-.Search{
-    margin-top: 10px;
-    margin-left: 10px;
+.form {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  height: 20%;
 }
-select{
-    border: none;
-    margin-top: 10px;
+.form-left {
+  position: relative;
 }
-.svg{
-    width: 50px;
-    height: 20px;
-    position: absolute;
-    right: 55%;
-    bottom: 25%;
+.form > div {
+  width: calc(95% / 2);
 }
-.dark{
-    height: 20px;
-    width: 20px;
-    margin-right: 4px;
+.container {
+  width: 100%;
+  margin-top: 10px;
+  height: 50vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.input {
+  height: 40px;
+  width: 300px;
+}
+.darkSearch {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+  margin-left: 10px;
+  height: 40px;
+  border: none;
+}
+.inpDark {
+  background-color: hsl(209, 23%, 22%);
+  border: none;
+  padding: 5px;
+  color: white;
+  height: 40px;
+
+  width: 300px;
+}
+.Search {
+  margin-left: 10px;
+  height: 40px;
+  border: none;
+}
+select {
+  border: none;
+  margin-top: 10px;
+}
+.svg {
+  width: 50px;
+  height: 20px;
+  position: absolute;
+  right: 57%;
+  bottom: 40%;
+}
+.dark {
+  height: 20px;
+  width: 20px;
+  margin-right: 4px;
+}
+.form-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.inpDarkRight {
+  display: flex;
+  justify-content: flex-end;
 }

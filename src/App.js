@@ -11,6 +11,13 @@ function App() {
   const [mydata, setmydata] = useState();
   const [selectedNamee, setselectedNamee] = useState(null);
   const [sel, setsel] = useState();
+  const [dark, setdark] = useState(false);
+
+  const handleMode = () => {
+    setdark((prev) => !prev);
+  };
+
+  console.log(dark);
 
   const handleInput = (e) => {
     setinp(e.target.value);
@@ -39,14 +46,13 @@ function App() {
   }, [btn, inp, mydata]);
 
   return (
-    <div className="App">
-      <div className="header">
+    <div className={dark ? "darkMode" : "App"}>
+      <div className={dark ? "darkModeHeader" : "header"}>
         <div className="title">
           <h1>Where In The World</h1>
-
         </div>
         <div className="btn-container">
-          <button className="btn">
+          <button className="btn" onClick={handleMode}>
             <svg
               className="dark"
               xmlns="http://www.w3.org/2000/svg"
@@ -68,31 +74,37 @@ function App() {
             <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
           </svg>
           <input
+            className={dark ? "inpDark" : "input"}
             type="text"
             onChange={handleInput}
             placeholder="Search For A Country"
           />
 
-          <button className="Search" onClick={handleBtn}>
+          <button className={dark ? "darkSearch" : "Search"} onClick={handleBtn}>
             Search
           </button>
         </div>
-        <div className="form-right"></div>
-        <select name="region" onChange={handleRegion}>
-          <option>Filter By Region</option>
-          <option>Africa</option>
-          <option>Asia</option>
-          <option>Europe</option>
-          <option>America</option>
-          <option>Oceania</option>
-        </select>
+        <div className={dark ? "inpDarkRight" : "form-right"}>
+          <select
+            name="region"
+            onChange={handleRegion}
+            className={dark ? "inpDark" : "input"}
+          >
+            <option>Filter By Region</option>
+            <option>Africa</option>
+            <option>Asia</option>
+            <option>Europe</option>
+            <option>America</option>
+            <option>Oceania</option>
+          </select>
+        </div>
       </div>
       {selectedNamee && selectedNamee.length > 0 && btn ? (
-        <Response res={selectedNamee} />
+        <Response res={selectedNamee} color={dark} />
       ) : sel ? (
-        <Region res={sel} />
+        <Region res={sel} color={dark} />
       ) : (
-        <Countries res={mydata} />
+        <Countries res={mydata} color={dark} />
       )}
     </div>
   );

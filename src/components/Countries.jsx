@@ -14,26 +14,26 @@ const Countries = (props) => {
 
   useEffect(() => {
     if (props.res) {
-        const countryData = props.res.map((r) => ({
-          name: r.name,
-          population: r.population,
-          capital: r.capital,
-          region: r.region,
-          flag: r.flags.png,
-        }));
-        setcard(countryData);
-      }
+      const countryData = props.res.map((r) => ({
+        name: r.name,
+        population: r.population,
+        capital: r.capital,
+        region: r.region,
+        flag: r.flags.png,
+      }));
+      setcard(countryData);
+    }
   }, [props.res]);
 
   return (
-    <div className="card-container">
+    <div className={props.dark ? 'darkMode' : 'card-container'}>
       {card.map((c) => (
-        <div className="card">
+        <div className={props.dark ? 'darkMode' : 'card'}>
           <img className="the-flag" src={c.flag} alt="flag" />
-          <h3>{c.name}</h3>
-          <span>Population : {c.population}</span>
-          <span>Capital :{c.capital}</span>
-          <span>Region :{c.region}</span>
+          <h3 className={props.dark ? 'colorWhite' : 'colorBlack'}>{c.name}</h3>
+          <span className={props.dark ? 'colorWhite' : 'colorBlack'}>Population : {c.population}</span>
+          <span className={props.dark ? 'colorWhite' : 'colorBlack'}>Capital :{c.capital}</span>
+          <span className={props.dark ? 'colorWhite' : 'colorBlack'}>Region :{c.region}</span>
         </div>
       ))}
     </div>
