@@ -4,6 +4,7 @@ import Response from "./components/Response";
 import Countries from "./components/Countries";
 import Region from "./components/Region";
 import Error from "./components/Error";
+import Notfound from "./components/Notfound";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -13,12 +14,11 @@ function App() {
   const [selectedNamee, setselectedNamee] = useState(null);
   const [sel, setsel] = useState();
   const [dark, setdark] = useState(false);
+  const [found,setfound] = useState();
 
   const handleMode = () => {
     setdark((prev) => !prev);
   };
-
-  console.log(dark);
 
   const handleInput = (e) => {
     setinp(e.target.value);
@@ -42,7 +42,11 @@ function App() {
       const found = mydata.filter(
         (dt) => dt.name.toLowerCase() === inp.toLowerCase()
       );
+
+      const notFound = mydata.some((dt) => dt.name.toLowerCase() === inp.toLocaleLowerCase());
+      
       setselectedNamee(found);
+      setfound(notFound);
     }
   }, [btn, inp, mydata]);
 
@@ -105,9 +109,11 @@ function App() {
       </div>
       {selectedNamee && selectedNamee.length > 0 && btn ? (
         <Response res={selectedNamee} color={dark} />
-      ) : btn && inp.length === 0 ? (
+      ) : btn && inp.length === 0 && !sel ? (
         <Error />
-      ) : sel ? (
+      )  : !found && btn && inp.length != 0 ? (
+        <Notfound />
+      )   : sel && (inp.length === 0 || inp.length > 0) ? (
         <Region res={sel} color={dark} />
       ) : (
         <Countries res={mydata} color={dark} />
