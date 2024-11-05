@@ -3,10 +3,11 @@ import "./stylee.css";
 import Response from "./components/Response";
 import Countries from "./components/Countries";
 import Region from "./components/Region";
+import Error from "./components/Error";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [inp, setinp] = useState();
+  const [inp, setinp] = useState('');
   const [btn, setbtn] = useState(false);
   const [mydata, setmydata] = useState();
   const [selectedNamee, setselectedNamee] = useState(null);
@@ -104,6 +105,8 @@ function App() {
       </div>
       {selectedNamee && selectedNamee.length > 0 && btn ? (
         <Response res={selectedNamee} color={dark} />
+      ) : btn && inp.length === 0 ? (
+        <Error />
       ) : sel ? (
         <Region res={sel} color={dark} />
       ) : (

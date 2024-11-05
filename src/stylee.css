@@ -193,3 +193,6 @@ select {
     margin-bottom: 5px;
   }
 }
+.Error{
+  background-color: red;
+}
