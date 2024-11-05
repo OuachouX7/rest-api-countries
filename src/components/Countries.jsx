@@ -26,14 +26,20 @@ const Countries = (props) => {
   }, [props.res]);
 
   return (
-    <div className={props.dark ? 'darkMode' : 'card-container'}>
+    <div className={props.dark ? "darkMode" : "card-container"}>
       {card.map((c) => (
-        <div className={props.dark ? 'darkMode' : 'card'}>
+        <div className={props.dark ? "darkMode" : "card"}>
           <img className="the-flag" src={c.flag} alt="flag" />
-          <h3 className={props.dark ? 'colorWhite' : 'colorBlack'}>{c.name}</h3>
-          <span className={props.dark ? 'colorWhite' : 'colorBlack'}>Population : {c.population}</span>
-          <span className={props.dark ? 'colorWhite' : 'colorBlack'}>Capital :{c.capital}</span>
-          <span className={props.dark ? 'colorWhite' : 'colorBlack'}>Region :{c.region}</span>
+          <h3 className={props.dark ? "colorWhite" : "colorBlack"}>{c.name}</h3>
+          <span className={props.dark ? "colorWhite" : "colorBlack"}>
+            Population : {c.population}
+          </span>
+          <span className={props.dark ? "colorWhite" : "colorBlack"}>
+            Capital :{c.capital}
+          </span>
+          <span className={props.dark ? "colorWhite" : "colorBlack"}>
+            Region :{c.region}
+          </span>
         </div>
       ))}
     </div>

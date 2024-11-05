@@ -80,7 +80,10 @@ function App() {
             placeholder="Search For A Country"
           />
 
-          <button className={dark ? "darkSearch" : "Search"} onClick={handleBtn}>
+          <button
+            className={dark ? "darkSearch" : "Search"}
+            onClick={handleBtn}
+          >
             Search
           </button>
         </div>
