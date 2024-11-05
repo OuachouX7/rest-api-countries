@@ -17,6 +17,9 @@
   margin: 15px 0;
   color: black;
 }
+.darkMode > h3,.darkMode > span {
+  color: white;
+}
 span,
 h3 {
   text-align: left;
@@ -35,9 +38,21 @@ h3 {
   background-color: hsl(207, 26%, 17%);
   color: white;
 }
-.colorWhite {
-  color: white;
+@media (max-width:830px){
+  .card-container > div {
+    width: calc(90% / 3);
+  }
 }
-.colorBlack {
-  color: black;
+@media (max-width : 756px){
+  .card-container > div {
+    width: calc(90% / 2);
+  }
+}
+@media (max-width : 390px){
+  .card-container > div {
+    width: calc(90% / 1);
+  }
+  h1{
+    font-size: 16px;
+  }
 }

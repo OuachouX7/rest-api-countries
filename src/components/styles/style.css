@@ -64,3 +64,31 @@ p {
   padding: 5px;
   margin: 0 10px;
 }
+@media (max-width:830px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width:715px) {
+  .right-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .right-down{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lang,.dark-border{
+    padding: 0;
+  }
+  .container{
+    height: auto;
+  }
+  .dark-border{
+    background-color: transparent;
+    color: black;
+  }
+}

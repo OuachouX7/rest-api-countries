@@ -26,7 +26,7 @@ const Countries = (props) => {
   }, [props.res]);
 
   return (
-    <div className={props.dark ? "darkMode" : "card-container"}>
+    <div className={props.dark ? "card-container" : "card-container"}>
       {card.map((c) => (
         <div className={props.dark ? "darkMode" : "card"}>
           <img className="the-flag" src={c.flag} alt="flag" />

@@ -25,9 +25,7 @@ const Response = (props) => {
                   Languages :{" "}
                   {selected.languages.map((lang) => (
                     <>
-                      <span className={props.dark ? "dark-border" : "lang"}>
-                        {lang.name}
-                      </span>
+                      <span className={props.dark ? 'dark-border' : "lang"}>{lang.name}</span>
                     </>
                   ))}
                 </p>
@@ -36,12 +34,10 @@ const Response = (props) => {
             <div className="right-down">
               <p>
                 Border Countries :{" "}
-                {selected.borders.map((s) => (
-                  <span className={props.dark ? "dark-border" : "border-c"}>
-                    {s}
-                  </span>
-                ))}
               </p>
+                {selected.borders.map((s) => (
+                  <span className={props.dark ? 'dark-border' : "border-c"}>{s}</span>
+                ))}
             </div>
           </div>
         </>
