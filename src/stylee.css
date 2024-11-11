@@ -152,6 +152,10 @@ select {
     align-items: center;
     height: 10vh;
   }
+  .form-left{
+    display: flex;
+    justify-content: center;
+  }
   .form > div {
     width: calc(100% / 2);
   }
