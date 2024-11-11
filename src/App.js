@@ -69,7 +69,7 @@ function App() {
           </button>
         </div>
       </div>
-      <div className="form">
+      <div className={"form"}>
         <div className="form-left">
           <svg
             className="svg"
