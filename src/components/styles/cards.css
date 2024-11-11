@@ -9,9 +9,10 @@
 .card-container > div {
   width: calc(61% / 3);
 }
-.darkMode > span,
-.card > span ,
-.card > h3{
+.darkkkMode > span,
+.card > span,
+.card > h3 ,
+.darkkkMode > h3{
   padding: 5px;
 }
 .card {
@@ -20,11 +21,11 @@
   flex-direction: column;
   background-color: #fff;
   margin: 15px 0;
-  box-shadow: 8px 5px 12px 5px #ddd;
+  box-shadow: 4px 4px 4px 4px #ddd;
   color: black;
 }
-.card:hover{
-  box-shadow: 8px 5px 15px 8px #ddd;
+.card:hover {
+  box-shadow: 8px 8px 8px 8px #ddd;
 }
 span,
 h3 {
@@ -46,12 +47,14 @@ h3 {
   background-color: hsl(209, 23%, 22%);
   margin: 15px 0;
 }
-.darkkkMode > span,.darkkkMode > h3,
-.card > span{
+.darkkkMode > span,
+.darkkkMode > h3,
+.card > span,
+.card > h3 {
   margin: 5px;
   padding: 8px;
 }
-.darkkMode{
+.darkkMode {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -63,30 +66,30 @@ h3 {
 .darkkMode > div {
   width: calc(61% / 3);
 }
-@media (max-width:830px){
+@media (max-width: 830px) {
   .card-container > div {
     width: calc(90% / 3);
   }
-  .darkkMode > div{
+  .darkkMode > div {
     width: calc(90% / 3);
   }
 }
-@media (max-width : 756px){
+@media (max-width: 756px) {
   .card-container > div {
     width: calc(90% / 2);
   }
-  .darkkMode > div{
+  .darkkMode > div {
     width: calc(90% / 2);
   }
 }
-@media (max-width : 390px){
+@media (max-width: 390px) {
   .card-container > div {
     width: calc(90% / 1);
   }
-  .darkkMode > div{
+  .darkkMode > div {
     width: calc(90% / 1);
   }
-  h1{
+  h1 {
     font-size: 16px;
   }
 }

@@ -26,14 +26,15 @@ const Countries = (props) => {
   }, [props.res]);
 
   console.log(props.color);
-  
 
   return (
-    <div className={props.color ? "darkkMode" : 'card-container'}>
+    <div className={props.color ? "darkkMode" : "card-container"}>
       {card.map((c) => (
         <div className={props.color ? "darkkkMode" : "card"}>
           <img className="the-flag" src={c.flag} alt="flag" />
-          <h3 className={props.color ? "colorWhite" : "colorBlack"}>{c.name}</h3>
+          <h3 className={props.color ? "colorWhite" : "colorBlack"}>
+            {c.name}
+          </h3>
           <span className={props.color ? "colorWhite" : "colorBlack"}>
             Population : {c.population}
           </span>
