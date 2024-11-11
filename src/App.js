@@ -108,6 +108,7 @@ function App() {
         <Countries res={mydata} color={dark} />
       )}
     </div>
+    
   );
 }
 
