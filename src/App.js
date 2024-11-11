@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [inp, setinp] = useState('');
-  const [btn, setbtn] = useState(false);
   const [mydata, setmydata] = useState();
   const [selectedNamee, setselectedNamee] = useState(null);
   const [sel, setsel] = useState();
@@ -24,10 +23,6 @@ function App() {
     setinp(e.target.value);
   };
 
-  const handleBtn = () => {
-    setbtn(true);
-  };
-
   const handleRegion = (e) => {
     const selectedRegion = e.target.value;
     setsel(selectedRegion);
@@ -38,7 +33,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (btn && mydata.length > 0) {
+    if (mydata && mydata.length > 0) {
       const found = mydata.filter(
         (dt) => dt.name.toLowerCase() === inp.toLowerCase()
       );
@@ -48,7 +43,7 @@ function App() {
       setselectedNamee(found);
       setfound(notFound);
     }
-  }, [btn, inp, mydata]);
+  }, [inp, mydata]);
 
   return (
     <div className={dark ? "darkMode" : "App"}>
@@ -85,12 +80,8 @@ function App() {
             placeholder="Search For A Country"
           />
 
-          <button
-            className={dark ? "darkSearch" : "Search"}
-            onClick={handleBtn}
-          >
-            Search
-          </button>
+          
+            
         </div>
         <div className={dark ? "inpDarkRight" : "form-right"}>
           <select
@@ -107,11 +98,9 @@ function App() {
           </select>
         </div>
       </div>
-      {selectedNamee && selectedNamee.length > 0 && btn ? (
+      {selectedNamee && selectedNamee.length > 0 ? (
         <Response res={selectedNamee} color={dark} />
-      ) : btn && inp.length === 0 && !sel ? (
-        <Error />
-      )  : !found && btn && inp.length != 0 ? (
+      ) : !found && inp.length !== 0 ? (
         <Notfound />
       )   : sel && (inp.length === 0 || inp.length > 0) ? (
         <Region res={sel} color={dark} />

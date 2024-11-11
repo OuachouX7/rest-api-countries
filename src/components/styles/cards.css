@@ -10,7 +10,8 @@
   width: calc(61% / 3);
 }
 .darkMode > span,
-.card > span{
+.card > span ,
+.card > h3{
   padding: 5px;
 }
 .card {
