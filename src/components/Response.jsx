@@ -25,19 +25,21 @@ const Response = (props) => {
                   Languages :{" "}
                   {selected.languages.map((lang) => (
                     <>
-                      <span className={props.color ? 'dark-border' : "lang"}>{lang.name}</span>
+                      <span className={props.color ? "dark-border" : "lang"}>
+                        {lang.name}
+                      </span>
                     </>
                   ))}
                 </p>
               </div>
             </div>
             <div className="right-down">
-              <p>
-                Border Countries :{" "}
-              </p>
-                {selected.borders.map((s) => (
-                  <span className={props.color ? 'dark-border' : "border-c"}>{s}</span>
-                ))}
+              <p>Border Countries : </p>
+              {selected.borders.map((s) => (
+                <span className={props.color ? "dark-border" : "border-c"}>
+                  {s}
+                </span>
+              ))}
             </div>
           </div>
         </>

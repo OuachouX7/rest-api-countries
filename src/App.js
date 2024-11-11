@@ -7,12 +7,12 @@ import Notfound from "./components/Notfound";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [inp, setinp] = useState('');
+  const [inp, setinp] = useState("");
   const [mydata, setmydata] = useState();
   const [selectedNamee, setselectedNamee] = useState(null);
   const [sel, setsel] = useState();
   const [dark, setdark] = useState(false);
-  const [found,setfound] = useState();
+  const [found, setfound] = useState();
 
   const handleMode = () => {
     setdark((prev) => !prev);
@@ -37,8 +37,10 @@ function App() {
         (dt) => dt.name.toLowerCase() === inp.toLowerCase()
       );
 
-      const notFound = mydata.some((dt) => dt.name.toLowerCase() === inp.toLocaleLowerCase());
-      
+      const notFound = mydata.some(
+        (dt) => dt.name.toLowerCase() === inp.toLocaleLowerCase()
+      );
+
       setselectedNamee(found);
       setfound(notFound);
     }
@@ -66,7 +68,7 @@ function App() {
       <div className={"form"}>
         <div className="form-left">
           <svg
-            className={dark ? 'svgDark' : "svg"}
+            className={dark ? "svgDark" : "svg"}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -78,9 +80,6 @@ function App() {
             onChange={handleInput}
             placeholder="Search For A Country"
           />
-
-          
-            
         </div>
         <div className={dark ? "inpDarkRight" : "form-right"}>
           <select
@@ -92,7 +91,7 @@ function App() {
             <option>Africa</option>
             <option>Asia</option>
             <option>Europe</option>
-            <option>America</option>
+            <option>Americas</option>
             <option>Oceania</option>
           </select>
         </div>
@@ -101,13 +100,12 @@ function App() {
         <Response res={selectedNamee} color={dark} />
       ) : !found && inp.length !== 0 ? (
         <Notfound />
-      )   : sel && (inp.length === 0 || inp.length > 0) ? (
+      ) : sel && (inp.length === 0 || inp.length > 0) ? (
         <Region res={sel} color={dark} />
       ) : (
         <Countries res={mydata} color={dark} />
       )}
     </div>
-
   );
 }
 

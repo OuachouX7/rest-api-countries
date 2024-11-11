@@ -17,18 +17,18 @@ const Region = (props) => {
     <div className={props.dark ? "darkMode" : "card-container"}>
       {region.length > 0 ? (
         region.map((reg) => (
-          <div className="card">
+          <div className={props.color ? "darkkkMode" : "card"}>
             <img className="the-flag" src={reg.flag} alt="flag" />
-            <h3 className={props.dark ? "colorWhite" : "colorBlack"}>
+            <h3 className={props.color ? "colorWhite" : "colorBlack"}>
               {reg.name}
             </h3>
-            <span className={props.dark ? "colorWhite" : "colorBlack"}>
+            <span className={props.color ? "colorWhite" : "colorBlack"}>
               Population : {reg.population}
             </span>
-            <span className={props.dark ? "colorWhite" : "colorBlack"}>
+            <span className={props.color ? "colorWhite" : "colorBlack"}>
               Capital :{reg.capital}
             </span>
-            <span className={props.dark ? "colorWhite" : "colorBlack"}>
+            <span className={props.color ? "colorWhite" : "colorBlack"}>
               Region :{reg.region}
             </span>
           </div>

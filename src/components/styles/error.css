@@ -1,8 +1,8 @@
-.Error{
-    background-color: rgb(255, 71, 71);
-    margin-top: 10px;
-    height: 10vh;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
+.Error {
+  background-color: rgb(255, 71, 71);
+  margin-top: 10px;
+  height: 10vh;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
 }

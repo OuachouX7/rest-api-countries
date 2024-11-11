@@ -11,8 +11,8 @@
 }
 .darkkkMode > span,
 .card > span,
-.card > h3 ,
-.darkkkMode > h3{
+.card > h3,
+.darkkkMode > h3 {
   padding: 5px;
 }
 .card {
@@ -45,6 +45,7 @@ h3 {
   display: flex;
   flex-direction: column;
   background-color: hsl(209, 23%, 22%);
+  box-shadow: none;
   margin: 15px 0;
 }
 .darkkkMode > span,
