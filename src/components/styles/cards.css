@@ -20,7 +20,11 @@
   flex-direction: column;
   background-color: #fff;
   margin: 15px 0;
+  box-shadow: 8px 5px 12px 5px #ddd;
   color: black;
+}
+.card:hover{
+  box-shadow: 8px 5px 15px 8px #ddd;
 }
 span,
 h3 {
