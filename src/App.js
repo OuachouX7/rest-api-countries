@@ -3,7 +3,6 @@ import "./stylee.css";
 import Response from "./components/Response";
 import Countries from "./components/Countries";
 import Region from "./components/Region";
-import Error from "./components/Error";
 import Notfound from "./components/Notfound";
 import { useEffect, useState } from "react";
 
@@ -108,7 +107,7 @@ function App() {
         <Countries res={mydata} color={dark} />
       )}
     </div>
-    
+
   );
 }
 
