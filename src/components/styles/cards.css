@@ -67,14 +67,23 @@ h3 {
   .card-container > div {
     width: calc(90% / 3);
   }
+  .darkkMode > div{
+    width: calc(90% / 3);
+  }
 }
 @media (max-width : 756px){
   .card-container > div {
     width: calc(90% / 2);
   }
+  .darkkMode > div{
+    width: calc(90% / 2);
+  }
 }
 @media (max-width : 390px){
   .card-container > div {
+    width: calc(90% / 1);
+  }
+  .darkkMode > div{
     width: calc(90% / 1);
   }
   h1{
