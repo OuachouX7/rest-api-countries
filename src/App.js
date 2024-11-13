@@ -12,7 +12,7 @@ function App() {
   const [selectedNamee, setselectedNamee] = useState(null);
   const [sel, setsel] = useState();
   const [dark, setdark] = useState(false);
-  const [found, setfound] = useState();
+  const [found, setfound] = useState([]);
 
   const handleMode = () => {
     setdark((prev) => !prev);
@@ -32,9 +32,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (mydata && mydata.length > 0) {
+    if (mydata && mydata.length > 0 && inp && inp.length > 0) {
       const found = mydata.filter(
-        (dt) => dt.name.toLowerCase() === inp.toLowerCase()
+        (dt) => dt.name.toLowerCase().includes(inp.toLowerCase())
       );
 
       const notFound = mydata.some(
@@ -45,6 +45,9 @@ function App() {
       setfound(notFound);
     }
   }, [inp, mydata]);
+
+ // console.log(selectedNamee);
+  
 
   return (
     <div className={dark ? "darkMode" : "App"}>
@@ -65,7 +68,7 @@ function App() {
           </button>
         </div>
       </div>
-      <div className={"form"}>
+      <div className="form">
         <div className="form-left">
           <svg
             className={dark ? "svgDark" : "svg"}

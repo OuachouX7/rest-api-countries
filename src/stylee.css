@@ -65,6 +65,7 @@
   width: 100%;
   display: flex;
   margin-top: 10px;
+  align-items: center;
   justify-content: space-between;
   height: 20%;
 }

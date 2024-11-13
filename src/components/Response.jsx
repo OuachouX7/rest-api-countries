@@ -1,48 +1,59 @@
-import "./styles/style.css";
+import { useEffect, useState } from "react";
+import "./styles/cards.css";
 
 const Response = (props) => {
+  const [ress, setress] = useState([
+    {
+      name: "",
+      population: null,
+      capital: "",
+      region: "",
+      flag: "",
+    },
+  ]);
+
+  useEffect(() => {
+    if (props.res) {
+      const countryData = props.res.map((r) => ({
+        name: r.name,
+        population: r.population,
+        capital: r.capital,
+        region: r.region,
+        flag: r.flags.png,
+      }));
+      setress(countryData);
+    }
+  }, [props.res]);
+  var classs = '';
+
+  if (ress.length <= 3 && props.color) {
+    classs = 'darkkMode noAuto'
+  }else if (ress.length <= 3 && !props.color) {
+    classs = 'card-container noAuto'
+  }else if (ress.length > 3 && props.color) {
+    classs = 'darkkMode Auto'
+  }else if (ress.length > 3 && !props.color) {
+    classs = 'card-container Auto'
+  }
+
   return (
-    <div className="container">
-      {props.res.map((selected) => (
-        <>
-          <div className="left">
-            <img className="img" src={selected.flags.svg}></img>
-          </div>
-          <div className="right">
-            <div className="right-up">
-              <div className="right-up-left">
-                <h2>{selected.name}</h2>
-                <p>Native Name : {selected.nativeName}</p>
-                <p>Native population : {selected.population}</p>
-                <p>region : {selected.region}</p>
-                <p>subregion : {selected.subregion}</p>
-                <p>capital : {selected.capital}</p>
-              </div>
-              <div className="right-up-right">
-                <p>topLevelDomainx : {selected.topLevelDomain}</p>
-                <p>currencies : {selected.currencies[0].name}</p>
-                <p>
-                  Languages :{" "}
-                  {selected.languages.map((lang) => (
-                    <>
-                      <span className={props.color ? "dark-border" : "lang"}>
-                        {lang.name}
-                      </span>
-                    </>
-                  ))}
-                </p>
-              </div>
-            </div>
-            <div className="right-down">
-              <p>Border Countries : </p>
-              {selected.borders.map((s) => (
-                <span className={props.color ? "dark-border" : "border-c"}>
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
-        </>
+    <div className={classs}>
+      {ress.map((c) => (
+        <div className={props.color ? "darkkkMode" : "card"}>
+          <img className="the-flag" src={c.flag} alt="flag" />
+          <h3 className={props.color ? "colorWhite" : "colorBlack"}>
+            {c.name}
+          </h3>
+          <span className={props.color ? "colorWhite" : "colorBlack"}>
+            Population : {c.population}
+          </span>
+          <span className={props.color ? "colorWhite" : "colorBlack"}>
+            Capital :{c.capital}
+          </span>
+          <span className={props.color ? "colorWhite" : "colorBlack"}>
+            Region :{c.region}
+          </span>
+        </div>
       ))}
     </div>
   );

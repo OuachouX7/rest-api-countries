@@ -25,7 +25,7 @@ const Countries = (props) => {
     }
   }, [props.res]);
 
-  console.log(props.color);
+  //console.log(card);
 
   return (
     <div className={props.color ? "darkkMode" : "card-container"}>
