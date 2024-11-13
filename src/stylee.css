@@ -127,15 +127,13 @@ select {
   left: 80%;
   bottom: 35%;
 }
-.svgDark{
-  
+.svgDark {
   width: 50px;
   height: 20px;
   position: absolute;
   left: 80%;
   filter: invert(1);
   bottom: 35%;
-
 }
 .dark {
   height: 20px;

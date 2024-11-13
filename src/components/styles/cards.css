@@ -9,7 +9,7 @@
 .card-container > div {
   width: calc(61% / 3);
 }
-.noAuto{
+.noAuto {
   height: 80vh !important;
 }
 .darkkkMode > span,

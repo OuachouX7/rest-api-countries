@@ -24,16 +24,16 @@ const Response = (props) => {
       setress(countryData);
     }
   }, [props.res]);
-  var classs = '';
+  var classs = "";
 
   if (ress.length <= 3 && props.color) {
-    classs = 'darkkMode noAuto'
-  }else if (ress.length <= 3 && !props.color) {
-    classs = 'card-container noAuto'
-  }else if (ress.length > 3 && props.color) {
-    classs = 'darkkMode Auto'
-  }else if (ress.length > 3 && !props.color) {
-    classs = 'card-container Auto'
+    classs = "darkkMode noAuto";
+  } else if (ress.length <= 3 && !props.color) {
+    classs = "card-container noAuto";
+  } else if (ress.length > 3 && props.color) {
+    classs = "darkkMode Auto";
+  } else if (ress.length > 3 && !props.color) {
+    classs = "card-container Auto";
   }
 
   return (

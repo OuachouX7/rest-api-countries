@@ -1,7 +1,7 @@
 import "./styles/error.css";
 
 const Notfound = () => {
-  return <div className="Error">Country Not Found !!!!!</div>;
+  return <div className="Error"><p>Country Not Found !!!!!</p></div>;
 };
 
 export default Notfound;

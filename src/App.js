@@ -33,8 +33,8 @@ function App() {
 
   useEffect(() => {
     if (mydata && mydata.length > 0 && inp && inp.length > 0) {
-      const found = mydata.filter(
-        (dt) => dt.name.toLowerCase().includes(inp.toLowerCase())
+      const found = mydata.filter((dt) =>
+        dt.name.toLowerCase().includes(inp.toLowerCase())
       );
 
       const notFound = mydata.some(
@@ -46,8 +46,7 @@ function App() {
     }
   }, [inp, mydata]);
 
- // console.log(selectedNamee);
-  
+  // console.log(selectedNamee);
 
   return (
     <div className={dark ? "darkMode" : "App"}>

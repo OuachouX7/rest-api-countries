@@ -1,8 +1,18 @@
 .Error {
-  background-color: rgb(255, 71, 71);
+  background-color: transparent;
   margin-top: 10px;
-  height: 10vh;
+  height: 75vh;
+  padding: 3px 0;
   font-size: 20px;
   display: flex;
+  justify-content: center;
+  width: 100% !important;
+}
+.Error > p{
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  background-color:rgb(255, 71, 71);
 }
