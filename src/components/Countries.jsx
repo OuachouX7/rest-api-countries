@@ -29,10 +29,10 @@ const Countries = (props) => {
 
   return (
     <div className={props.color ? "darkkMode" : "card-container"}>
-      {card.map((c) => (
+      {card.map((c,index) => (
         <div className={props.color ? "darkkkMode" : "card"}>
           <img className="the-flag" src={c.flag} alt="flag" />
-          <h3 className={props.color ? "colorWhite" : "colorBlack"}>
+          <h3 key={index} className={props.color ? "colorWhite" : "colorBlack"}>
             {c.name}
           </h3>
           <span className={props.color ? "colorWhite" : "colorBlack"}>

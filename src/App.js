@@ -1,10 +1,11 @@
-import data from "./data/data.json";
+// import data from "./data/data.json";
 import "./stylee.css";
 import Response from "./components/Response";
 import Countries from "./components/Countries";
 import Region from "./components/Region";
 import Notfound from "./components/Notfound";
 import { useEffect, useState } from "react";
+import axios from 'axios';
 
 function App() {
   const [inp, setinp] = useState("");
@@ -28,8 +29,14 @@ function App() {
   };
 
   useEffect(() => {
-    setmydata(data);
-  }, []);
+    axios.get('http://localhost:3031/countries')
+    .then(res => setmydata(res.data))
+    .catch(err => console.log(err)
+    )
+  },[])
+
+  console.log(mydata);
+  
 
   useEffect(() => {
     if (mydata && mydata.length > 0 && inp && inp.length > 0) {
@@ -46,7 +53,7 @@ function App() {
     }
   }, [inp, mydata]);
 
-  // console.log(selectedNamee);
+  console.log(selectedNamee);
 
   return (
     <div className={dark ? "darkMode" : "App"}>

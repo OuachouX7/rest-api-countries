@@ -38,19 +38,19 @@ const Response = (props) => {
 
   return (
     <div className={classs}>
-      {ress.map((c) => (
+      {ress.map((c,index) => (
         <div className={props.color ? "darkkkMode" : "card"}>
-          <img className="the-flag" src={c.flag} alt="flag" />
-          <h3 className={props.color ? "colorWhite" : "colorBlack"}>
+          <img key={index}  className="the-flag" src={c.flag} alt="flag" />
+          <h3 key={index}  className={props.color ? "colorWhite" : "colorBlack"}>
             {c.name}
           </h3>
-          <span className={props.color ? "colorWhite" : "colorBlack"}>
+          <span key={index}  className={props.color ? "colorWhite" : "colorBlack"}>
             Population : {c.population}
           </span>
-          <span className={props.color ? "colorWhite" : "colorBlack"}>
+          <span key={index}  className={props.color ? "colorWhite" : "colorBlack"}>
             Capital :{c.capital}
           </span>
-          <span className={props.color ? "colorWhite" : "colorBlack"}>
+          <span  key={index} className={props.color ? "colorWhite" : "colorBlack"}>
             Region :{c.region}
           </span>
         </div>
