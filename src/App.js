@@ -1,4 +1,3 @@
-// import data from "./data/data.json";
 import "./stylee.css";
 import Response from "./components/Response";
 import Countries from "./components/Countries";
@@ -110,7 +109,7 @@ function App() {
       ) : !found && inp.length !== 0 ? (
         <Notfound />
       ) : sel && (inp.length === 0 || inp.length > 0) ? (
-        <Region res={sel} color={dark} />
+        <Region res={sel} color={dark} data={mydata}/>
       ) : (
         <Countries res={mydata} color={dark} />
       )}

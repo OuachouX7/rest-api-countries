@@ -1,4 +1,3 @@
-import dataJson from "../data/data.json";
 import "./styles/cards.css";
 import { useEffect, useState } from "react";
 
@@ -6,9 +5,10 @@ const Region = (props) => {
   const [region, setregion] = useState([]);
 
   useEffect(() => {
-    const selectedRegionn = dataJson.filter(
+    const selectedRegionn = props.data.filter(
       (data) => data.region === props.res
     );
+
 
     setregion(selectedRegionn);
   }, [props.res]);
