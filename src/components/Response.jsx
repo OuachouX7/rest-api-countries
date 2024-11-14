@@ -26,9 +26,9 @@ const Response = (props) => {
   }, [props.res]);
   var classs = "";
 
-  if (ress.length <= 3 && props.color) {
+  if (ress.length <= 4 && props.color) {
     classs = "darkkMode noAuto";
-  } else if (ress.length <= 3 && !props.color) {
+  } else if (ress.length <= 4 && !props.color) {
     classs = "card-container noAuto";
   } else if (ress.length > 3 && props.color) {
     classs = "darkkMode Auto";
